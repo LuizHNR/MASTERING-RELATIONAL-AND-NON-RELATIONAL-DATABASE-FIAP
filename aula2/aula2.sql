@@ -4,9 +4,11 @@ SET SERVEROUTPUT ON
 
 Declare
 
-    v_nome varchar2(30) := 'Presunto';
-    v_sal number(7,2) := 1000.72;
+--  Pegando o tipo direto da tabela sem ter que ficar dizendo qual é
+    v_nome emp.ename%TYPE := 'Presunto';
+    v_sal emp.sal%TYPE := 1000.72;
     v_hoje DATE := SYSDATE;
+    v_hoje v_hoje%TYPE := SYSDATE + 1;
     
 BEGIN
 
@@ -15,7 +17,7 @@ BEGIN
     
 --  Jeito errado  
 --  select ename from emp where sal > 3000
-
+--  Fazendo uma consulta de dois valores
     select ename, sal into v_name, v_sal from emp where sal > 3000;
 
     v_hoje := v_hoje +1;
