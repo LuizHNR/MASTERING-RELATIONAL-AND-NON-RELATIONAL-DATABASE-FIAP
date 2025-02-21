@@ -17,6 +17,7 @@ BEGIN
     
 --  Jeito errado  
 --  select ename from emp where sal > 3000
+
 --  Fazendo uma consulta de dois valores
     select ename, sal into v_name, v_sal from emp where sal > 3000;
 
@@ -25,4 +26,3 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(v_nome || v_sal || v_hoje);
     
 END;
-
